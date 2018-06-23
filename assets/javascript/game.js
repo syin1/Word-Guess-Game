@@ -9,8 +9,8 @@ $(document).ready(function() {
     var setup = '';
 
     for (var i = 0; i < answer.length; i++) {
-      var letter = '_ ';
-      setup = letter + setup;
+      var oneletter = '_ ';
+      setup = oneletter + setup;
     }
 
     $('#random-number').html(setup);
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
     $('#random-number').html(guess);
     $('#remaining').html(remaining);
-    $('#lettersguessed').html(lettersguessed.join(', '));
+    $('#lettersguessed').html(lettersguessed.join(' '));
 
     if (guessright === answer.length) {
       gameswon++;
