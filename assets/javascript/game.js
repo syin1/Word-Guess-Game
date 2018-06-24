@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var answer = 'GREAT';
-  var remaining = 12;
+  var remaining = 8;
   var lettersguessed = [];
   var gameswon = 0;
   var gameslost = 0;
@@ -45,24 +45,26 @@ $(document).ready(function() {
 
       guess = guess + letter;
     }
+    $('#random-number').html(guess);
 
     if (
       guesswrong === answer.length &&
       $.inArray(event.key.toUpperCase(), lettersguessed) === -1
     ) {
       remaining--;
+
+      $('#remaining').html(remaining);
+
       lettersguessed.push(event.key.toUpperCase());
     }
 
-    $('#random-number').html(guess);
-    $('#remaining').html(remaining);
     $('#lettersguessed').html(lettersguessed.join(' '));
 
     if (guessright === answer.length) {
       gameswon++;
       $('#gameswon').html(gameswon);
       restart();
-      remaining = 12;
+      remaining = 8;
       $('#remaining').html(remaining);
 
       lettersguessed = [];
@@ -73,7 +75,7 @@ $(document).ready(function() {
       gameslost++;
       $('#gameslost').html(gameslost);
       restart();
-      remaining = 12;
+      remaining = 8;
       $('#remaining').html(remaining);
 
       lettersguessed = [];

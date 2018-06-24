@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  margin: 20px auto;
+  margin: 30px auto;
 }
 
 .display-4 {
@@ -16,5 +16,10 @@ body {
 }
 
 h3 {
-  font-family: 'Song Myung', serif;
+  font-family: 'Indie Flower', cursive;
+}
+
+#random-number {
+  margin-top: 40px;
+  margin-bottom: 90px;
 }

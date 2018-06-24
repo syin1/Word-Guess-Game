@@ -6,8 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Shaoming's Word Guess Game!</title>
-  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Lobster+Two|Song+Myung" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Indie+Flower|Lobster+Two|Song+Myung" rel="stylesheet">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
   <script src="assets/javascript/game.js"></script>
 
   <link rel="stylesheet" href="assets/css/reset.css">
@@ -23,36 +31,75 @@
       <div class="col-md-4">
 
         <h1 class="display-4">HANGMAN</h1>
-        <p class="lead">NBA Player Edition</p>
+        <p class="lead">NBA Player Edition
+
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> EASY
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off"> HARD
+            </label>
+          </div>
+
+        </p>
         <p class="lead">Press any key to get started!</p>
 
       </div>
 
       <div class="col-md-8">
-        <h3>
-          Number of Guesses Remaining:
-          <strong id="remaining">12</strong>
-        </h3>
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h3>
+              Wins:
+              <strong id="gameswon">0</strong>
+            </h3>
 
-        <h3>
-          Letters Already Guessed:
-          <strong id="lettersguessed"></strong>
-        </h3>
-
-        <h3>
-          Wins:
-          <strong id="gameswon">0</strong>
-        </h3>
-
-        <h3>
-          Losses:
-          <strong id="gameslost">0</strong>
-        </h3>
+            <h3>
+              Losses:
+              <strong id="gameslost">0</strong>
+            </h3>
+          </div>
+        </div>
       </div>
-
     </div>
 
     <h1 id="random-number"></h1>
+
+    <h3>
+      Number of Guesses Remaining:
+      <strong id="remaining">8</strong>
+    </h3>
+
+    <h3>
+      Letters Already Guessed:
+      <strong id="lettersguessed"></strong>
+    </h3>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      Hint
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Hint</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </body>
