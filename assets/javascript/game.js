@@ -71,19 +71,33 @@ $(document).ready(function() {
 
   function restart() {
     randomindex = Math.floor(Math.random() * 10);
-    answer = easyFirstNames[randomindex] + '/' + easyLastNames[randomindex];
-
     var setup = '';
     var oneletter = '_ ';
 
-    for (var i = 0; i < easyFirstNames[randomindex].length; i++) {
-      setup = setup + oneletter;
-    }
+    if (easy === 1) {
+      answer = easyFirstNames[randomindex] + '/' + easyLastNames[randomindex];
 
-    setup = setup + '/';
+      for (var i = 0; i < easyFirstNames[randomindex].length; i++) {
+        setup = setup + oneletter;
+      }
 
-    for (var i = 0; i < easyLastNames[randomindex].length; i++) {
-      setup = setup + oneletter;
+      setup = setup + '/';
+
+      for (var i = 0; i < easyLastNames[randomindex].length; i++) {
+        setup = setup + oneletter;
+      }
+    } else if (easy === 0) {
+      answer = hardFirstNames[randomindex] + '/' + hardLastNames[randomindex];
+
+      for (var i = 0; i < hardFirstNames[randomindex].length; i++) {
+        setup = setup + oneletter;
+      }
+
+      setup = setup + '/';
+
+      for (var i = 0; i < hardLastNames[randomindex].length; i++) {
+        setup = setup + oneletter;
+      }
     }
 
     $('#random-number').html(setup);
@@ -161,6 +175,30 @@ $(document).ready(function() {
   });
 
   $('button.btn.btn-primary').on('click', function() {
-    $('#thehint').html('He plays for the ' + easyHints[randomindex] + '!');
+    if (easy === 1) {
+      $('#thehint').html('He plays for the ' + easyHints[randomindex] + '!');
+    } else if (easy === 0) {
+      $('#thehint').html('Sorry, no hints for the hard version!');
+    }
+  });
+
+  $('.easymode').on('click', function() {
+    easy = 1;
+    remaining = 8;
+    restart();
+    $('#remaining').html(remaining);
+
+    lettersguessed = [];
+    $('#lettersguessed').html(lettersguessed.join(' '));
+  });
+
+  $('.hardmode').on('click', function() {
+    easy = 0;
+    remaining = 6;
+    restart();
+    $('#remaining').html(remaining);
+
+    lettersguessed = [];
+    $('#lettersguessed').html(lettersguessed.join(' '));
   });
 });
