@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Shaoming's Word Guess Game!</title>
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Lobster+Two|Song+Myung" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="assets/javascript/game.js"></script>
 
@@ -16,35 +17,43 @@
 </head>
 
 <body>
-  <div class="jumbotron">
-    <h1 class="display-4">HANGMAN</h1>
-    <p class="lead">Press any key to get started!</p>
-    <!-- <hr class="my-4"> -->
-    <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
-    <!-- <button type="button" id="random-button" class="btn btn-primary">Start</button> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+
+        <h1 class="display-4">HANGMAN</h1>
+        <p class="lead">NBA Player Edition</p>
+        <p class="lead">Press any key to get started!</p>
+
+      </div>
+
+      <div class="col-md-8">
+        <h3>
+          Number of Guesses Remaining:
+          <strong id="remaining">12</strong>
+        </h3>
+
+        <h3>
+          Letters Already Guessed:
+          <strong id="lettersguessed"></strong>
+        </h3>
+
+        <h3>
+          Wins:
+          <strong id="gameswon">0</strong>
+        </h3>
+
+        <h3>
+          Losses:
+          <strong id="gameslost">0</strong>
+        </h3>
+      </div>
+
+    </div>
+
+    <h1 id="random-number"></h1>
   </div>
-
-  <h1 class="text-center" id="random-number"></h1>
-
-  <h3>
-    Number of Guesses Remaining:
-    <strong id="remaining">12</strong>
-  </h3>
-
-  <h3>
-    Letters Already Guessed:
-    <strong id="lettersguessed"></strong>
-  </h3>
-
-  <h3>
-    Wins:
-    <strong id="gameswon">0</strong>
-  </h3>
-
-  <h3>
-    Losses:
-    <strong id="gameslost">0</strong>
-  </h3>
 
 </body>
 

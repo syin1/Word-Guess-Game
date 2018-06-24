@@ -1,0 +1,20 @@
+body {
+  background-image: url('../images/NBA.jpg');
+  color: white;
+}
+
+.container {
+  margin: 20px auto;
+}
+
+.display-4 {
+  font-family: 'Lobster Two', cursive;
+}
+
+.lead {
+  font-family: 'IM Fell English SC', serif;
+}
+
+h3 {
+  font-family: 'Song Myung', serif;
+}

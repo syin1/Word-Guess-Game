@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var answer = 'great';
+  var answer = 'GREAT';
   var remaining = 12;
   var lettersguessed = [];
   var gameswon = 0;
@@ -31,7 +31,7 @@ $(document).ready(function() {
     for (var i = 0; i < answer.length; i++) {
       var letter;
 
-      if (event.key === answer[i]) {
+      if (event.key.toUpperCase() === answer[i]) {
         letter = answer[i] + ' ';
         guessright++;
       } else if (current[i] !== '_') {
@@ -48,10 +48,10 @@ $(document).ready(function() {
 
     if (
       guesswrong === answer.length &&
-      $.inArray(event.key, lettersguessed) === -1
+      $.inArray(event.key.toUpperCase(), lettersguessed) === -1
     ) {
       remaining--;
-      lettersguessed.push(event.key);
+      lettersguessed.push(event.key.toUpperCase());
     }
 
     $('#random-number').html(guess);
