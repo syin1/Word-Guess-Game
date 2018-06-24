@@ -64,7 +64,7 @@ $(document).ready(function() {
   var easy = 1;
   var randomindex;
   var answer;
-  var remaining = 8;
+  var remaining = 10;
   var lettersguessed = [];
   var gameswon = 0;
   var gameslost = 0;
@@ -155,7 +155,13 @@ $(document).ready(function() {
       // audio.play();
 
       restart();
-      remaining = 8;
+
+      if (easy === 1) {
+        remaining = 10;
+      } else if (easy === 0) {
+        remaining = 6;
+      }
+
       $('#remaining').html(remaining);
 
       lettersguessed = [];
@@ -166,7 +172,13 @@ $(document).ready(function() {
       gameslost++;
       $('#gameslost').html(gameslost);
       restart();
-      remaining = 8;
+
+      if (easy === 1) {
+        remaining = 10;
+      } else if (easy === 0) {
+        remaining = 6;
+      }
+
       $('#remaining').html(remaining);
 
       lettersguessed = [];
@@ -184,7 +196,7 @@ $(document).ready(function() {
 
   $('.easymode').on('click', function() {
     easy = 1;
-    remaining = 8;
+    remaining = 10;
     restart();
     $('#remaining').html(remaining);
 
