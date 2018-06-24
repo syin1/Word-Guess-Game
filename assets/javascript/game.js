@@ -1,16 +1,89 @@
 $(document).ready(function() {
-  var answer = 'GREAT';
+  var easyFirstNames = [
+    'LEBRON',
+    'KEVIN',
+    'STEPHEN',
+    'KAWHI',
+    'JAMES',
+    'RUSSELL',
+    'CHRIS',
+    'ANTHONY',
+    'KYRIE',
+    'DRAYMOND'
+  ];
+  var easyLastNames = [
+    'JAMES',
+    'DURANT',
+    'CURRY',
+    'LEONARD',
+    'HARDEN',
+    'WESTBROOK',
+    'PAUL',
+    'DAVIS',
+    'IRVING',
+    'GREEN'
+  ];
+  var easyHints = [
+    'Cleveland Cavaliers',
+    'Golden State Warriors',
+    'Golden State Warriors',
+    'San Antonio Spurs',
+    'Houston Rockets',
+    'Oklahoma City Thunder',
+    'Houston Rockets',
+    'New Orleans Pelicans',
+    'Boston Celtics',
+    'Golden State Warriors'
+  ];
+
+  var hardFirstNames = [
+    'RYAN',
+    'GEORGIOS',
+    'SKAL',
+    'BOBAN',
+    'LANGSTON',
+    'MILOS',
+    'JONAS',
+    'ISAIAH',
+    'TOMAS',
+    'NIKOLA'
+  ];
+  var hardLastNames = [
+    'ARCIDIACONO',
+    'PAPAGIANNIS',
+    'LABISSIERE',
+    'MARJANOVIC',
+    'GALLOWAY',
+    'TEODOSIC',
+    'VALANCIUNAS',
+    'WHITEHEAD',
+    'SATORANSKY',
+    'VUCEVIC'
+  ];
+
+  var easy = 1;
+  var randomindex;
+  var answer;
   var remaining = 8;
   var lettersguessed = [];
   var gameswon = 0;
   var gameslost = 0;
 
   function restart() {
-    var setup = '';
+    randomindex = Math.floor(Math.random() * 10);
+    answer = easyFirstNames[randomindex] + '/' + easyLastNames[randomindex];
 
-    for (var i = 0; i < answer.length; i++) {
-      var oneletter = '_ ';
-      setup = oneletter + setup;
+    var setup = '';
+    var oneletter = '_ ';
+
+    for (var i = 0; i < easyFirstNames[randomindex].length; i++) {
+      setup = setup + oneletter;
+    }
+
+    setup = setup + '/';
+
+    for (var i = 0; i < easyLastNames[randomindex].length; i++) {
+      setup = setup + oneletter;
     }
 
     $('#random-number').html(setup);
@@ -63,6 +136,10 @@ $(document).ready(function() {
     if (guessright === answer.length) {
       gameswon++;
       $('#gameswon').html(gameswon);
+
+      // var audio = new Audio('../audio/boo.mp3');
+      // audio.play();
+
       restart();
       remaining = 8;
       $('#remaining').html(remaining);
@@ -81,5 +158,9 @@ $(document).ready(function() {
       lettersguessed = [];
       $('#lettersguessed').html(lettersguessed.join(' '));
     }
+  });
+
+  $('button.btn.btn-primary').on('click', function() {
+    $('#thehint').html('He plays for the ' + easyHints[randomindex] + '!');
   });
 });
