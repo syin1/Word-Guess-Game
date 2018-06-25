@@ -154,14 +154,25 @@ $(document).ready(function() {
       // var audio = new Audio('../audio/boo.mp3');
       // audio.play();
 
-      restart();
-
       if (easy === 1) {
+        alert(
+          "Yeah, you guessed it!! It's " +
+            easyFirstNames[randomindex] +
+            ' ' +
+            easyLastNames[randomindex]
+        );
         remaining = 10;
       } else if (easy === 0) {
+        alert(
+          "Yeah, you guessed it!! It's " +
+            hardFirstNames[randomindex] +
+            ' ' +
+            hardLastNames[randomindex]
+        );
         remaining = 8;
       }
 
+      restart();
       $('#remaining').html(remaining);
 
       lettersguessed = [];
@@ -171,13 +182,26 @@ $(document).ready(function() {
     if (remaining === 0) {
       gameslost++;
       $('#gameslost').html(gameslost);
-      restart();
 
       if (easy === 1) {
+        alert(
+          "Booo!! It's " +
+            easyFirstNames[randomindex] +
+            ' ' +
+            easyLastNames[randomindex]
+        );
         remaining = 10;
       } else if (easy === 0) {
+        alert(
+          "Booo!! It's " +
+            hardFirstNames[randomindex] +
+            ' ' +
+            hardLastNames[randomindex]
+        );
         remaining = 8;
       }
+
+      restart();
 
       $('#remaining').html(remaining);
 
