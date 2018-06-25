@@ -32,3 +32,8 @@ h3 {
 #exampleModalCenterTitle {
   color: blue;
 }
+
+.scorebanner,
+.gamebanner {
+  padding: 5px;
+}

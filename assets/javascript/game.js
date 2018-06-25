@@ -159,7 +159,7 @@ $(document).ready(function() {
       if (easy === 1) {
         remaining = 10;
       } else if (easy === 0) {
-        remaining = 6;
+        remaining = 8;
       }
 
       $('#remaining').html(remaining);
@@ -176,7 +176,7 @@ $(document).ready(function() {
       if (easy === 1) {
         remaining = 10;
       } else if (easy === 0) {
-        remaining = 6;
+        remaining = 8;
       }
 
       $('#remaining').html(remaining);
@@ -206,7 +206,7 @@ $(document).ready(function() {
 
   $('.hardmode').on('click', function() {
     easy = 0;
-    remaining = 6;
+    remaining = 8;
     restart();
     $('#remaining').html(remaining);
 
