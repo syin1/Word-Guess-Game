@@ -4,8 +4,6 @@
 
 ## Press any key to get started!
 
----
-
 ### Try to guess any current NBA player before the number of allowed guesses runs out.
 
 ### There are 2 play modes: easy and hard.
